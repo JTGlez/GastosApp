@@ -11,10 +11,10 @@ export const SetupPage = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen flex items-center justify-center bg-blue-500 ">
       {/* Formulario para ingresar los datos del usuario */}
-      <button onClick={() => handleSetupComplete('John Doe', '5000', 'monthly', 1000)}>
-        Complete Setup
+      <button className="bg-white text-blue-500 p-4 rounded shadow animate-slide-up-fade" onClick={() => handleSetupComplete('John Doe', '5000', 'monthly', 1000)}>
+        Complete Setup s
       </button>
     </div>
   );
