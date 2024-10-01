@@ -1,7 +1,7 @@
 # GastosApp 💸
 
 Every time I tried to use Excel to track my monthly expenses, I failed miserably because I don't know (and honestly don't want to learn) Excel. 
-So, instead of learning Excel like a normal person would, I'm building a trash app in React to get the job done. And as like to do overengineered stuff, it features a Go backend.
+So, instead of learning Excel like a normal person would, I'm building a trash app in React to get the job done. And as I like to do overengineered stuff, it features a Go backend.
 
 ## Tools
 
