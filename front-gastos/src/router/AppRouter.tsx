@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import { ExpensesRoutes } from '@/expenses/routes/ExpensesRoutes';
 import { SetupPage } from '@/setup/pages/SetupPage';
 import { useUserStore } from '@/store/useUserStore';
+import { ProtectedRoute } from '@/expenses/routes/ProtectedRoute';
 
 export const AppRouter = () => {
   const isUserDataComplete = useUserStore((state) => state.isUserDataComplete());
@@ -17,6 +18,7 @@ export const AppRouter = () => {
     },
     {
       path: '/expenses/*',
+      element: <ProtectedRoute />,
       children: ExpensesRoutes,
     },
     {

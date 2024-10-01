@@ -24,8 +24,8 @@ export const useUserStore = create<UserStore>()(
       setUserData: (name: string, income: string, period: string, limit: number) => set({ name, income, period, limit }),
     }),
     {
-      name: 'user-storage', // Nombre único para el almacenamiento
-      storage: createJSONStorage(() => localStorage), // Usar localStorage para persistencia
+      name: 'user-storage', 
+      storage: createJSONStorage(() => localStorage),
     }
   )
 );
