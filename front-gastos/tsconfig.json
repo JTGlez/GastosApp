@@ -12,6 +12,7 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"] 
-    }
+    },
+    "strict": true
   }
 }

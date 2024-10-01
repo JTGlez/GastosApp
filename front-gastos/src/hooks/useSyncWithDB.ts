@@ -34,7 +34,7 @@ const useSyncWithDatabase = () => {
       ) {
         // Si los datos locales y remotos no coinciden, actualizamos el store
         console.log('Data mismatch, updating local store with remote data.');
-        setUserData(remoteData.name, remoteData.income.toString(), remoteData.period, remoteData.limit);
+        setUserData(remoteData.name, remoteData.income, remoteData.period, remoteData.limit);
       }
     };
 
