@@ -1,29 +1,29 @@
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import { ExpensesRoutes } from '@/expenses/routes/ExpensesRoutes';
 import { SetupPage } from '@/setup/pages/SetupPage';
-
-// Configuración del router
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Navigate to="/setup" replace />,
-  },
-  {
-    path: '/setup',
-    element: <SetupPage />,
-  },
-  {
-    path: '/expenses/*',
-    children: ExpensesRoutes,
-  },
-  {
-    path: '*',
-    element: <Navigate to="/setup" replace />,
-  },
-]);
+import { useUserStore } from '@/store/useUserStore';
 
 export const AppRouter = () => {
-  return (
-    <RouterProvider router={router} />
-  );
+  const isUserDataComplete = useUserStore((state) => state.isUserDataComplete());
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: isUserDataComplete ? <Navigate to="/expenses/home" replace /> : <Navigate to="/setup" replace />,
+    },
+    {
+      path: '/setup',
+      element: isUserDataComplete ? <Navigate to="/expenses/home" replace /> : <SetupPage />,
+    },
+    {
+      path: '/expenses/*',
+      children: ExpensesRoutes,
+    },
+    {
+      path: '*',
+      element: <Navigate to="/setup" replace />,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 };
